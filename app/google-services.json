@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "414711712189",
+    "project_id": "miniportfolioapp",
+    "storage_bucket": "miniportfolioapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414711712189:android:76946a8552e91a38022ad4",
+        "android_client_info": {
+          "package_name": "com.amro.miniportfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414711712189-d9ut8t477cqdpqad3peg6985prfr29pr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amro.miniportfolio",
+            "certificate_hash": "f6edf47900f498326de08d3a233a3aa0a3f6ba3f"
+          }
+        },
+        {
+          "client_id": "414711712189-b8vd5clkngg654s6e17kns1r1ephturc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAocL5YLbevNF6QC4h4tz87Ugug_L8kdbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414711712189-b8vd5clkngg654s6e17kns1r1ephturc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

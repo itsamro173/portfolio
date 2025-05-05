@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.TeenScape" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary branding color -->
+        <item name="colorPrimary">#2A3663</item>
+        <item name="colorPrimaryVariant">#B59F78</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+
+        <!-- Secondary color -->
+        <item name="colorSecondary">#D8DBBD</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- Backgrounds -->
+        <item name="android:colorBackground">#FAF6E3</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnBackground">#2A3663</item>
+
+        <!-- Optional: status bar + nav bar -->
+        <item name="android:statusBarColor" tools:targetApi="l">#2A3663</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">#2A3663</item>
+    </style>
+</resources>
