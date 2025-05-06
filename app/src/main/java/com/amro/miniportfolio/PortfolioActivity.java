@@ -29,7 +29,7 @@ import java.util.List;
 
 public class PortfolioActivity extends AppCompatActivity {
 
-    TextView nameTextView, bioTextView, contactTextView;
+    TextView nameTextView, bioTextView, portfolioPhone, portfolioLink;
     TextView noProjectsText;
     ImageView profileImageView;
     RecyclerView projectListView;
@@ -56,7 +56,8 @@ public class PortfolioActivity extends AppCompatActivity {
         // 🔗 UI bindings
         nameTextView = findViewById(R.id.portfolioName);
         bioTextView = findViewById(R.id.portfolioBio);
-        contactTextView = findViewById(R.id.portfolioContact);
+        portfolioPhone = findViewById(R.id.portfolioPhone); // Updated ID
+        portfolioLink = findViewById(R.id.portfolioLink);   // Updated ID
         profileImageView = findViewById(R.id.portfolioProfileImage);
         projectListView = findViewById(R.id.portfolioProjectsList);
         noProjectsText = findViewById(R.id.noProjectsText); // ✅ after setContentView!
@@ -88,11 +89,14 @@ public class PortfolioActivity extends AppCompatActivity {
 
             if (id == R.id.nav_profile) {
                 startActivity(new Intent(this, ProfileActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             } else if (id == R.id.nav_projects) {
                 startActivity(new Intent(this, ProjectsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }  else if (id == R.id.nav_logout) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(this, LoginActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
                 finish();
             }
 
@@ -121,17 +125,25 @@ public class PortfolioActivity extends AppCompatActivity {
                         String phone = doc.getString("phone");
                         String link = doc.getString("link");
 
-                        StringBuilder contact = new StringBuilder();
+                        // Set phone number
                         if (!TextUtils.isEmpty(phone)) {
-                            contact.append("📞 ").append(phone).append("\n");
-                        }
-                        if (!TextUtils.isEmpty(link)) {
-                            contact.append("🔗 ").append(link);
-                            contactTextView.setAutoLinkMask(Linkify.WEB_URLS | Linkify.PHONE_NUMBERS);
-                            contactTextView.setMovementMethod(LinkMovementMethod.getInstance());
+                            portfolioPhone.setText(phone);
+                            portfolioPhone.setVisibility(View.VISIBLE);
+                            // Auto-linking is handled by android:autoLink="phone" in XML
+                        } else {
+                            portfolioPhone.setVisibility(View.GONE);
                         }
 
-                        contactTextView.setText(contact.toString());
+                        // Set link
+                        if (!TextUtils.isEmpty(link)) {
+                            portfolioLink.setText(link);
+                            portfolioLink.setVisibility(View.VISIBLE);
+                            // Auto-linking is handled by android:autoLink="web" in XML
+                        } else {
+                            portfolioLink.setVisibility(View.GONE);
+                        }
+
+                        // TODO: Load profile image using Glide
                     }
                 });
     }

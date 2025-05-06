@@ -67,8 +67,10 @@ public class ProjectsActivity extends AppCompatActivity {
             int id = item.getItemId();
             if (id == R.id.nav_portfolio) {
                 startActivity(new Intent(this, PortfolioActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             } else if (id == R.id.nav_profile) {
                 startActivity(new Intent(this, ProfileActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             } else if (id == R.id.nav_projects) {
                 drawerLayout.closeDrawer(GravityCompat.START);
             } else if (id == R.id.nav_logout) {
@@ -77,6 +79,7 @@ public class ProjectsActivity extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                finish(); // Finish ProjectsActivity after logout
 
             }
             drawerLayout.closeDrawer(GravityCompat.START);

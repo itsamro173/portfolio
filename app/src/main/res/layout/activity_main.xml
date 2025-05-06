@@ -47,14 +47,18 @@
                     android:id="@+id/nameEditText"
                     android:hint="Your Name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#2A3663"
+                    />
 
                 <EditText
                     android:id="@+id/bioEditText"
                     android:hint="Your Bio"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp" />
+                    android:layout_marginTop="12dp"
+                    android:textColor="#2A3663"
+                    />
 
                 <Button
                     android:id="@+id/saveBtn"
@@ -75,14 +79,18 @@
                     android:hint="Project Title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="20dp"
+                    android:textColor="#2A3663"
+                    />
 
                 <EditText
                     android:id="@+id/projectDescriptionInput"
                     android:hint="Project Description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:textColor="#2A3663"
+                    />
 
                 <Button
                     android:id="@+id/addProjectBtn"

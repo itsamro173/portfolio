@@ -40,16 +40,18 @@ public class PortfolioAdapter extends RecyclerView.Adapter<PortfolioAdapter.View
 
         public ViewHolder(View v) {
             super(v);
-            title = v.findViewById(R.id.projectTitle);
-            description = v.findViewById(R.id.projectDescription);
+            // Update IDs to match list_item_project.xml
+            title = v.findViewById(R.id.projectTitleTextView);
+            description = v.findViewById(R.id.projectDescriptionTextView);
         }
     }
 
     @NonNull
     @Override
     public PortfolioAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Inflate the new card layout
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_portfolio, parent, false);
+                .inflate(R.layout.list_item_project, parent, false);
         return new ViewHolder(view);
     }
 

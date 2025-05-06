@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3A0CA3</color>
-    <color name="colorPrimaryVariant">#5F0A87</color>
-    <color name="colorOnPrimary">#FFFFFF</color>
-    <color name="colorOnSecondary">#EEEEEE</color>
-    <color name="colorSurface">#FFFFFF</color>
-    <color name="navItemColor">#BDBDFB</color>
-    <color name="colorAccent">#FF4081</color> <!-- You can customize this -->
-    <color name="colorBackground">#FFFFFF</color> <!-- Or your theme's background -->
+    <!-- New Color Palette Inspired by Example -->
+    <color name="colorPrimary">#1A237E</color> <!-- Dark Blue (Indigo 900) -->
+    <color name="colorPrimaryVariant">#0D1B5A</color> <!-- Darker Blue -->
+    <color name="colorOnPrimary">#FFFFFF</color> <!-- White text on dark blue -->
+
+    <color name="colorSecondary">#4CAF50</color> <!-- Example uses green for profile image bg, keep similar? -->
+    <color name="colorOnSecondary">#000000</color> <!-- Black text on green -->
+
+    <color name="colorBackground">#FFF8E1</color> <!-- Light Cream/Beige (Light Yellow 50) -->
+    <color name="colorOnBackground">#000000</color> <!-- Black text on light background -->
+
+    <color name="colorSurface">#FFFFFF</color> <!-- White for Cards -->
+    <color name="colorOnSurface">#000000</color> <!-- Black text on cards -->
+
+    <color name="colorAccent">#1A237E</color> <!-- Use primary color as accent -->
+
+    <!-- Standard Colors -->
     <color name="black">#000000</color>
-    <color name="teal_700">#018786</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Navigation Drawer -->
+    <color name="navDrawerBackground">#1A237E</color> <!-- Dark Blue for drawer -->
+    <color name="navItemColor">#FFFFFF</color> <!-- White text/icons in drawer -->
 
 </resources>

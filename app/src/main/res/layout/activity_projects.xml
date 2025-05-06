@@ -4,25 +4,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"> 
+    <!-- Use new background color -->
 
     <!-- Main Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:orientation="vertical">
 
         <!-- Toolbar -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            android:title="Projects"
-            android:titleTextColor="@android:color/white"
-            android:elevation="4dp" />
+            android:layout_height="?attr/actionBarSize" 
+            android:background="@color/colorPrimary" 
+            android:title="Add/View Projects"
+            android:elevation="4dp" 
+            app:titleTextColor="@color/colorOnPrimary" /> 
+        <!-- Use standard height -->
+        <!-- Use new primary color -->
+        <!-- Standard elevation -->
+        <!-- Use new text color -->
 
         <!-- Content -->
         <ScrollView
@@ -34,40 +38,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingTop="16dp">
+                android:padding="16dp"> 
+                <!-- Consistent padding -->
 
-                <EditText
-                    android:id="@+id/projectTitleInput"
-                    android:hint="Project Title"
+                <!-- Project Title Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/poppins_regular"
-                     />
+                    android:layout_marginBottom="12dp"
+                    android:hint="Project Title">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/projectTitleInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2A3663"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <EditText
-                    android:id="@+id/projectDescriptionInput"
-                    android:hint="Project Description"
+                <!-- Project Description Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/poppins_regular"
-                    />
+                    android:layout_marginBottom="16dp"
+                    android:hint="Project Description">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/projectDescriptionInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2A3663"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <!-- Add Project Button -->
                 <Button
                     android:id="@+id/addProjectBtn"
+                    style="@style/Widget.MaterialComponents.Button" 
                     android:text="Add Project"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/poppins_regular"
-                    />
+                    android:layout_marginBottom="24dp" />
+                <!-- Use Material Button style -->
 
+                <!-- Projects List Header -->
+                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Existing Projects"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="8dp"/>
+
+                <!-- Projects RecyclerView -->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/portfolioRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp" />
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
@@ -78,11 +105,12 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@drawable/drawer_background"
-        android:fitsSystemWindows="true"
-        app:menu="@menu/drawer_menu"
-        app:itemTextColor="@color/navItemColor"
-        app:itemIconTint="@color/navItemColor"
-        app:itemBackground="?attr/selectableItemBackground" />
+        android:background="@color/navDrawerBackground" 
+        app:itemTextColor="@color/navItemColor" 
+        app:itemIconTint="@color/navItemColor" 
+        app:menu="@menu/drawer_menu" />
+    <!-- Use new drawer background -->
+    <!-- Use new item color -->
+    <!-- Use new item color -->
 
 </androidx.drawerlayout.widget.DrawerLayout>

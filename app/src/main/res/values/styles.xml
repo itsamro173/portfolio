@@ -1,2 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <!-- Text Styles -->
+    <style name="TextAppearance.MyApp.Headline1" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:fontFamily">@font/poppins_regular</item> <!-- Assuming poppins_regular exists -->
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item> <!-- Use black for max contrast -->
+    </style>
+
+    <style name="TextAppearance.MyApp.Body1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@android:color/black</item> <!-- Use black for max contrast -->
+    </style>
+
+    <style name="TextAppearance.MyApp.Body2" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@android:color/tertiary_text_light</item> <!-- Use standard Android color for secondary text -->
+    </style>
+
+    <style name="TextAppearance.MyApp.Link" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">?attr/colorPrimary</item> <!-- Use primary color for links -->
+        <item name="android:autoLink">all</item>
+        <item name="android:linksClickable">true</item>
+    </style>
+
+    <!-- Button Style -->
+    <style name="Widget.MyApp.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:background">@drawable/button_rounded</item> <!-- Keep existing rounded background -->
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="Widget.MyApp.Button.Secondary" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:background">@drawable/button_rounded</item>
+        <item name="backgroundTint">?attr/colorPrimaryVariant</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+</resources>

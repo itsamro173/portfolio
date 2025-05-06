@@ -4,37 +4,33 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAF6E3">
-
-    <!-- Navigation Drawer -->
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="#D8DBBD"
-        android:focusableInTouchMode="true"
-        app:menu="@menu/drawer_menu" />
+    android:background="@color/colorBackground"> 
+    <!-- Use new background color -->
 
     <!-- Main Content -->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:descendantFocusability="blocksDescendants">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#2A3663"
+            android:layout_height="?attr/actionBarSize" 
+            android:background="@color/colorPrimary" 
             android:title="Edit Profile"
-            android:titleTextColor="#FFFFFF" />
+            android:elevation="4dp" 
+            app:titleTextColor="@color/colorOnPrimary" /> 
+        <!-- Use standard height -->
+        <!-- Use new primary color -->
+        <!-- Standard elevation -->
+        <!-- Use new text color -->
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="24dp">
+            android:padding="16dp"> 
+            <!-- Consistent padding -->
 
             <LinearLayout
                 android:orientation="vertical"
@@ -59,82 +55,108 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="user@email.com"
-                    android:textColor="#2A3663"
-                    android:textSize="14sp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" 
+                    android:textColor="@color/colorOnBackground" 
                     android:layout_marginBottom="24dp" />
+                <!-- Use Material style -->
+                <!-- Use new text color -->
 
                 <!-- Name -->
-                <EditText
-                    android:id="@+id/nameEditText"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name"
-                    android:background="@drawable/edittext_rounded"
-                    android:padding="16dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#888888"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp"
+                    android:hint="Name">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nameEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2A3663"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Bio -->
-                <EditText
-                    android:id="@+id/bioEditText"
+                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Bio"
-                    android:background="@drawable/edittext_rounded"
-                    android:padding="16dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#888888"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp"
+                    android:hint="Bio">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/bioEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2A3663"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Phone -->
-                <EditText
-                    android:id="@+id/phoneInput"
+                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Phone"
-                    android:inputType="phone"
-                    android:background="@drawable/edittext_rounded"
-                    android:padding="16dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#888888"
-                    android:layout_marginBottom="12dp" />
+                    android:layout_marginBottom="12dp"
+                    android:hint="Phone">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneInput"
+                        android:inputType="phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2A3663"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Link -->
-                <EditText
-                    android:id="@+id/linkInput"
+                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Link"
-                    android:inputType="textUri"
-                    android:background="@drawable/edittext_rounded"
-                    android:padding="16dp"
-                    android:textColor="#000000"
-                    android:textColorHint="#888888"
-                    android:layout_marginBottom="24dp" />
+                    android:layout_marginBottom="24dp"
+                    android:hint="Link">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/linkInput"
+                        android:inputType="textUri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#2A3663"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!-- Save -->
                 <Button
                     android:id="@+id/saveBtn"
+                    style="@style/Widget.MaterialComponents.Button" 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Save Profile"
-                    android:backgroundTint="#2A3663"
-                    android:textColor="#FFFFFF"
-                    android:layout_marginBottom="12dp"
-                    android:background="@drawable/button_rounded" />
+                    android:layout_marginBottom="12dp" />
+                <!-- Use Material Button style -->
 
                 <!-- Logout -->
                 <Button
                     android:id="@+id/logoutBtn"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Logout"
-                    android:backgroundTint="#B59F78"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/button_rounded" />
+                    android:text="Logout" />
+                <!-- Use Outlined style for secondary -->
 
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/navDrawerBackground" 
+        app:itemTextColor="@color/navItemColor" 
+        app:itemIconTint="@color/navItemColor" 
+        app:menu="@menu/drawer_menu" />
+    <!-- Use new drawer background -->
+    <!-- Use new item color -->
+    <!-- Use new item color -->
 </androidx.drawerlayout.widget.DrawerLayout>

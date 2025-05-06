@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:padding="24dp"
+        android:background="@color/colorBackground">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -43,7 +44,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:fontFamily="@font/poppins_regular"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="#2A3663"
+                    android:background="@drawable/edittext_rounded"
+                    android:padding="12dp" />
 
                 <!-- Description -->
                 <EditText
@@ -53,16 +57,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
                     android:fontFamily="@font/poppins_regular"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="#2A3663"
+                    android:background="@drawable/edittext_rounded"
+                    android:padding="12dp" />
 
+                <!-- Save Button -->
                 <Button
                     android:id="@+id/saveEditedProjectBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Save Changes"
-                    android:layout_marginTop="16dp"/>
-
-                <!-- Save Button -->
+                    android:layout_marginTop="16dp" />
 
                 <!-- Delete Button -->
                 <Button
@@ -83,7 +89,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@drawable/drawer_background"
-
         app:menu="@menu/drawer_menu"
         app:itemTextColor="@color/navItemColor"
         app:itemIconTint="@color/navItemColor" />

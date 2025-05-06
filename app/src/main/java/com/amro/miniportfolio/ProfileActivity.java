@@ -170,47 +170,41 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
     @Override
     protected void onStart() {
         super.onStart();
-        if (navigationView != null) {
-            navigationView.setNavigationItemSelectedListener(this); // 🔁 Force reset
-            Log.d("DRAWER_DEBUG", "Listener reset in onStart()");
-        }
+        // Listener is set in onCreate, no need to reset here
+        // if (navigationView != null) {
+        //     navigationView.setNavigationItemSelectedListener(this); // 🔁 Force reset
+        //     Log.d("DRAWER_DEBUG", "Listener reset in onStart()");
+        // }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Toast.makeText(this, "Menu item clicked", Toast.LENGTH_SHORT).show(); // ✅ Confirm listener fires
-
-
         int id = item.getItemId();
-        drawerLayout.closeDrawers();
+        // Close the drawer immediately
+        drawerLayout.closeDrawer(androidx.core.view.GravityCompat.START);
 
-        Log.d("DRAWER_CLICK", "Clicked item ID: " + item.getItemId());
-        Log.d("DRAWER_CLICK", "Title: " + item.getTitle());
-
-
-        Toast.makeText(this, "Tapped item ID: " + id, Toast.LENGTH_SHORT).show(); // ✅ Debug
-        Log.d("DRAWER_DEBUG", "Tapped item ID: " + id);
-
-        new android.os.Handler().postDelayed(() -> {
+        // Post the navigation action to the main thread queue
+        // This allows the drawer closing animation to start smoothly
+        new android.os.Handler(android.os.Looper.getMainLooper()).post(() -> {
             if (id == R.id.nav_portfolio) {
-                Log.d("DRAWER_DEBUG", "Opening PortfolioActivity");
                 startActivity(new Intent(ProfileActivity.this, PortfolioActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             } else if (id == R.id.nav_projects) {
-                Log.d("DRAWER_DEBUG", "Opening ProjectsActivity");
                 startActivity(new Intent(ProfileActivity.this, ProjectsActivity.class));
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             } else if (id == R.id.nav_profile) {
-                Log.d("DRAWER_DEBUG", "Already on ProfileActivity");
+                // Already on profile, do nothing
             } else if (id == R.id.nav_logout) {
-                Log.d("DRAWER_DEBUG", "Logging out");
                 mAuth.signOut();
                 Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+                finish(); // Finish ProfileActivity after logout
             }
-        }, 250);
+        });
 
-        return true;
+        return true; // Indicate item was handled
     }
 
 
@@ -222,13 +216,13 @@ public class ProfileActivity extends AppCompatActivity implements NavigationView
     protected void onResume() {
         super.onResume();
         Log.d("DRAWER_DEBUG", "onResume triggered");
-
-        if (navigationView != null) {
-            navigationView.setNavigationItemSelectedListener(this); // 🔄 Re-attach drawer listener
-            Log.d("DRAWER_DEBUG", "NavigationView listener reattached");
-        } else {
-            Log.e("DRAWER_DEBUG", "NavigationView is null in onResume");
-        }
+        // Listener is set in onCreate, no need to re-attach here
+        // if (navigationView != null) {
+        //     navigationView.setNavigationItemSelectedListener(this); // 🔄 Re-attach drawer listener
+        //     Log.d("DRAWER_DEBUG", "NavigationView listener reattached");
+        // } else {
+        //     Log.e("DRAWER_DEBUG", "NavigationView is null in onResume");
+        // }
     }
 
 

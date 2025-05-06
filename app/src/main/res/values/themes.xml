@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme -->
     <style name="Theme.TeenScape" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary branding color -->
-        <item name="colorPrimary">#2A3663</item>
-        <item name="colorPrimaryVariant">#B59F78</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
 
-        <!-- Secondary color -->
-        <item name="colorSecondary">#D8DBBD</item>
-        <item name="colorOnSecondary">#000000</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
         <!-- Backgrounds -->
-        <item name="android:colorBackground">#FAF6E3</item>
-        <item name="colorSurface">#FFFFFF</item>
-        <item name="colorOnBackground">#2A3663</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorBackground</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
 
-        <!-- Optional: status bar + nav bar -->
-        <item name="android:statusBarColor" tools:targetApi="l">#2A3663</item>
-        <item name="android:navigationBarColor" tools:targetApi="l">#2A3663</item>
+        <!-- Customize your theme here. -->
+        <item name="android:fontFamily">@font/poppins_regular</item> <!-- Apply default font -->
+
     </style>
 </resources>
